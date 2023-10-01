@@ -1,0 +1,20 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc.v1;
+
+// Request message for SayHello.
+message HelloRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+// Response message for SayHello.
+message HelloResponse {
+    string greeting = 1;
+}
+
+// The Hello service provides hello methods.
+service HelloService {
+    // Sends a hello message.
+    rpc hello(HelloRequest) returns (HelloResponse);
+}
